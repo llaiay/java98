@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>09-二级联动.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+	
+</script>
+
+</head>
+<body>
+	<select id="province" >
+		<option value="0">--请选择省--</option>
+		<option value="1">--广东省--</option>
+		<option value="2">--湖南省--</option>
+		<option value="3">--湖北省--</option>
+
+	</select>
+
+	<select id="city" >
+		<option>--请选择市--</option>
+	</select>
+	<script>
+		var city= [[],
+			["广州","深圳","惠州","东莞"],
+			["长沙","岳阳","常德","衡阳"],
+			["武汉","黄冈","宜昌","荆州"]
+		]
+		//省份下拉框绑定事件
+		let province = document.getElementById("province");
+		province.onchange = function () {
+			//获取当前省份的所有城市
+		let value =	province.value;
+		//当前省份数组
+			let items = city[value];
+
+			//遍历出每一个省份
+			//遍历添加前,先清除城市下拉框这种所有option
+			document.getElementById("city").innerHTML = "<option>--请选择城市--</option>";
+			for (var i= 0; i < items.length; i++){
+				var cityname = items[i];
+				//创建option
+				var op = document.createElement("option");
+				//将城市名设置到option标签体中
+				op.innerHTML = items[i]
+				document.getElementById("city").appendChild(op)
+			}
+		}
+	</script>
+
+</body>
+
+</html>

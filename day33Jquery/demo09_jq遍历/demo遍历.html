@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq遍历</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <ul>
+        <li>北京</li>
+        <li>上海</li>
+        <li>广州</li>
+        <li>深圳</li>
+    </ul>
+    <script>
+        var arr =[1,2,"zs",3,4,5]
+        //js 遍历
+        for (var i = 0;i<arr.length;i++){
+            console.log(arr[i])
+        }
+
+        //js遍历每一个li标签,获取里面的内容
+        var element = document.getElementsByTagName("li")
+        for (var i = 0;i < element.length;i++){
+            //遍历的是标签里面的内容.innerHTML
+            console.log(element[i].innerHTML)
+        }
+
+        //jq方式遍历,获取li标签里的内容
+        //.each():遍历每个jq对象
+        $("li").each(function (index,element) {
+            console.log(index+":"+element.innerHTML)
+        })
+
+        //for of遍历
+        for (element of $("li")){
+            console.log(element.innerHTML)
+        }
+
+
+
+    </script>
+</body>
+</html>

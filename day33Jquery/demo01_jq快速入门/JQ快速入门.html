@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq入门</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+        <script>
+        // //给当前window窗口绑定一个加载完毕事件
+        // window.onload = function () {
+        //     //窗体加载完毕，就会执行这个匿名函数
+        //     //目标: 获取输入框的value值
+        //     let el = document.getElementById("d1");
+        //     let value = el.value;
+        //     alert(value)
+        //
+        // }
+        //jquery也可以绑定加载完毕事件
+            $(function () {
+                let value = document.getElementById("d1").value;
+                alert(value)
+            })
+        </script>
+        <input type="text" id="d1" value="战三">
+</body>
+</html>

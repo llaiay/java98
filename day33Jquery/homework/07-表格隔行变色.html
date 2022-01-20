@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>07-表格隔行变色.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+table {
+	border: 1px red solid;
+	width: 500px;
+	margin: auto;
+}
+
+td {
+	border: 1px blue solid;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+th {
+	background-color: maroon;
+}
+
+.one {
+	background-color: blue;
+}
+
+.two {
+	background-color: green;
+}
+
+.over {
+	background-color: aqua;
+}
+</style>
+
+<script type="text/javascript" src="../js/jquery-3.3.1.js">
+	window.onload = function() {
+		var tab=document.getElementById("info");
+		var len = document.getElementById("info").rows.length;
+		for(var i = 3; i <= len - 2; i++) {
+			if(i % 2 == 1) tab.rows[i].className = "one";
+			else tab.rows[i].className = "two";
+		}
+		tab.rows[i].className = "over";
+	}
+</script>
+
+</head>
+
+<body>
+	<table id="info">
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>地址</th>
+		</tr>
+		<tr class="one">
+			<td>高杰</td>
+			<td>18</td>
+			<td>闵行</td>
+		</tr>
+		<tr class="two">
+			<td>李刚</td>
+			<td>16</td>
+			<td>上海</td>
+		</tr>
+		<tr>
+			<td>赵士龙</td>
+			<td>22</td>
+			<td>东莞</td>
+		</tr>
+		<tr>
+			<td>鲁宾</td>
+			<td>29</td>
+			<td>北京</td>
+		</tr>
+		<tr>
+			<td>刘鹏</td>
+			<td>13</td>
+			<td>幼儿园</td>
+		</tr>
+		<tr>
+			<td>刘鹏</td>
+			<td>13</td>
+			<td>幼儿园</td>
+		</tr>
+		<tr>
+			<td>刘鹏</td>
+			<td>13</td>
+			<td>幼儿园</td>
+		</tr>
+		<tr>
+			<td>刘鹏</td>
+			<td>13</td>
+			<td>幼儿园</td>
+		</tr>
+		<tr>
+			<td>刘鹏</td>
+			<td>13</td>
+			<td>幼儿园</td>
+		</tr>
+		<tr>
+			<td>刘鹏</td>
+			<td>13</td>
+			<td>幼儿园</td>
+		</tr>
+		<tr>
+			<td>刘鹏</td>
+			<td>13</td>
+			<td>幼儿园</td>
+		</tr>
+	</table>
+
+<!--<script >-->
+<!--	$("tr:odd").css("background-color","red")//奇数-->
+<!--	$("tr:even").css("background-color","green")//偶数-->
+
+<!--</script>-->
+
+</body>
+</html>

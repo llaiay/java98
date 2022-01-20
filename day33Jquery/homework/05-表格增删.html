@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>05-表格增删.html</title>
+</head>
+<script type="text/javascript">
+	function deleteMyRow(obj){
+		let tr = obj.parentNode.parentNode;
+		tr.parentNode.removeChild(tr)
+	}
+	window.onload = function () {
+		let addUser = document.getElementById("addUser");
+		addUser.onclick = function () {
+			//获取标签值
+			let username = document.getElementById("name").value;
+			let phone = document.getElementById("tel").value;
+			let address = document.getElementById("addr").value;
+			//创建行标签
+			let tr = document.createElement("tr");
+			//创建列标签
+			let tdName = document.createElement("td");
+			let tdTel = document.createElement("td");
+			let tdAdr = document.createElement("td");
+			let tdDelete = document.createElement("td");
+			let a = document.createElement("a");         //创建a标签
+			a.href = "#";
+			a.innerHTML = "删除";
+			//给删除添加点击事件
+			a.onclick = function(){
+				deleteMyRow(this)
+			};
+			tdDelete.appendChild(a);
+
+			//添加姓名...
+			tdName.innerHTML = username;
+			tr.appendChild(tdName);
+			tdTel.innerHTML = phone;
+			tr.appendChild(tdTel)
+			tdAdr.innerHTML = address;
+			tr.appendChild(tdAdr)
+			tr.appendChild(tdDelete)
+			//通过表格标签
+			let table = document.getElementById("usertable");
+			table.appendChild(tr)
+		}
+
+	}
+</script>
+<body>
+	<center>
+		<br>
+		<br> 添加用户:<br>
+		<br> 姓名: <input type="text" name="name" id="name" />&nbsp;&nbsp; 电话: <input type="text"
+			name="tel" id="tel" />&nbsp;&nbsp; 住址: <input type="text" name="addr" id="addr" /><br>
+		<br>
+		<button id="addUser">提交</button>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<br>
+		<table id="usertable" border="1" cellpadding="5" cellspacing="0">
+			<tr>
+				<th>姓名</th>
+				<th>电话</th>
+				<th>住址</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>张三</td>
+				<td>110</td>
+				<td>上海</td>
+				<td><a href="#" onclick="deleteMyRow(this);">删除</a>
+				</td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>

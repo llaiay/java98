@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="ad" style="display: none">
+        <img src="../imgs/8.jpg" width="200" height="300">
+    </div>
+    <h1>主题页面内容</h1>
+    <script>
+        function showImg() {
+            $("#ad").slideDown(2000,function () {
+                setTimeout(hideImg(),2000)
+            })
+        }
+
+        function hideImg() {
+            $("#ad").slideUp(3000)
+        }
+        setTimeout("showImg()",3000)
+    </script>
+</body>
+</html>

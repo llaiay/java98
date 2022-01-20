@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+        <img id="mm" src="../imgs/18.jpg" width="500px" height="500px"><br>
+        <input type="button" onclick="showImg()" value="显示">
+        <input type="button" onclick="hideImg()" value="隐藏">
+        <input type="button" onclick="toggleImg()" value="切换">
+
+        <script>
+            //显示图片
+            function showImg() {
+                // $("img").show(3000,function () {
+                //     alert("显示结束")
+                // })
+
+                $("img").fadeIn(2000)
+            }
+            function hideImg() {
+                // $("img").hide(2000,function () {
+                //     alert("显示结束")
+                // })
+
+                //向上隐藏
+                $("img").slideUp(2000)
+
+            }
+
+
+            //切换
+            function toggleImg() {
+                $("img").toggle(2000)
+            }
+        </script>
+</body>
+</html>

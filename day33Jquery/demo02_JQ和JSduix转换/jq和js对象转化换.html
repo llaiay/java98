@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+        <input type="text" id="d1" value="张三">
+<script>
+    ////目标: 获取输入框的值
+    //1. 什么是jQuery对象: 使用jQuery的选择器获取的对象就是jQuery对象
+    //2. 什么是js对象: 除了jQuery对象，其它的都是js对象
+    //3. js对象只能操作js对象自己的属性和方法
+    //4. jQuery对象只能操作jQuery对象自己的属性和方法
+   let el = document.getElementById("d1");
+   // let value = el.value;
+   // console.log(value)
+    let s = $("#d1");
+    alert(s[0].value)
+
+</script>
+
+</body>
+</html>

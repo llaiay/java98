@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>02-删除替换克隆标签.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	#one{
+    		border: 1px solid blue;
+    		background-color: green;
+    		width: 300px;
+    		height: 150px;
+    	}
+    	#two{
+    		border: 1px solid blue;
+    		background-color: aqua;
+    		width: 250px;
+    		height: 100px;
+    	}
+    </style>
+    <script type="text/javascript" src="../js/jquery-3.3.1.js">
+    
+    </script>
+  </head>
+  <body>
+  	<div id="one" > 
+  		xxxxxx
+  	</div>
+  	<div id="two" > 
+  		yyyyyy
+  	</div>
+  	<input type="button" value="删除元素" onclick="demo()"/>
+  	<input type="button" value="替换元素" onclick="demo2()"/>
+  	<input type="button" value="克隆和替换" onclick="demo3()"/>
+
+    <script>
+        //删除
+        function demo() {
+         document.getElementById("two").remove()
+        }
+        //替换
+        function demo2() {
+               var l= document.getElementById("one")
+               var  l2 = document.getElementById("two")
+                l.replaceWith(l2)
+        }
+        //克隆
+        function demo3() {
+            var s1 = document.getElementById("one")
+            var s2 = document.getElementById("two")
+            s1.replaceWith(s2.cloneNode(s1))
+        }
+    </script>
+  </body>
+</html>

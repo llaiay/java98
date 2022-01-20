@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<ul id="city">
+    <li id="bj">北京</li>
+    <li id="sh">上海</li>
+    <li id="sz">深圳</li>
+    <li id="gz">广州</li>
+</ul>
+<input type="button" value="添加" onclick="addCity()"><br>
+<input type="button" value="删除" onclick="removeCity()"><br>
+<input type="button" value="清空城市列表" onclick="removeAllCity()">
+
+<script>
+    //点击添加按钮,添加城市
+    //创建苏州标签,将创建出来的标签添加到城市列表中
+    function addCity() {
+        // $("#city").append($("<li id='sz'>苏州</li>"))
+
+        // $("<li id='sz'>苏州</li>").appendTo($("#city"))
+        $("#city").prepend($("<li id='sz'>南京</li>"))//从开头添加
+
+    }
+
+    function removeCity() {
+        //删除
+        $("#gz").remove()
+    }
+
+    function removeAllCity() {
+        $("#city").empty()
+    }
+
+</script>
+</body>
+</html>
